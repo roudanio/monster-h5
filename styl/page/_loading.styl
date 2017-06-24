@@ -1,5 +1,48 @@
 #loading
-  background-color black
+  background-color #111
   display flex
-  justify-content center
+  flex-direction column
   align-items center
+  color #CCC
+
+  header
+    width 100%
+    height 50%
+    position relative
+
+    p
+      position absolute
+      top 50%
+      left 0
+      right 0
+      margin-top -.5em
+      text-align center
+      opacity 0
+      animation 16s linear infinite keyword
+
+      for n in 1..4
+        &:nth-child({n})
+
+          animation-delay 4s * (n - 1)
+
+@keyframes keyword {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  8% {
+    opacity: 1;
+    transform: none;
+  }
+  17% {
+    opacity: 1;
+    transform: none;
+  }
+  25% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 100%, 0);
+  }
+}
