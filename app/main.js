@@ -9,7 +9,7 @@ import Clouds from './view/clouds';
 import * as template from './component/template';
 import {sleep} from './helper/next';
 
-/* global Router */
+/* global Router, URL */
 
 class App {
   constructor(queue) {
@@ -25,16 +25,22 @@ class App {
     let page = document.createElement('div');
     page.innerHTML = html;
     page.className = `container page out ${name}`;
-    let blob = this.queue.getResult(name, true);
-    let url = URL.createObjectURL(blob);
+    let url = this.getResourceURL(name);
     page.style.backgroundImage = `url(${url})`;
     page = document.body.appendChild(page);
-    blob = this.queue.getResult('back-button', true);
-    url = URL.createObjectURL(blob);
     let image = document.createElement('img');
-    image.src = url;
+    image.src = this.getResourceURL('back-button');
     $('.back-button', page)[0].appendChild(image);
+    if (name === 'video') {
+      url = this.getResourceURL('poster');
+      $('video', page)[0].poster = url;
+    }
     return page;
+  }
+
+  getResourceURL(name) {
+    let blob = this.queue.getResult(name, true);
+    return URL.createObjectURL(blob);
   }
 
   createRouter() {

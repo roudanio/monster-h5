@@ -22,7 +22,6 @@
 
       for n in 1..4
         &:nth-child({n})
-          font-size 1 + .25em * (n - 1)
           animation-delay 4s * (n - 1)
 
   footer
@@ -53,21 +52,14 @@
 @keyframes keyword {
   0% {
     opacity: 0;
-    transform: translate3d(0, 100%, 0);
   }
   8% {
     opacity: 1;
-    transform: none;
   }
   17% {
     opacity: 1;
-    transform: none;
   }
   25% {
     opacity: 0;
-    transform: translate3d(0, -100%, 0);
-  }
-  100% {
-    transform: translate3d(0, 100%, 0);
   }
 }

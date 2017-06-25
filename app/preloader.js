@@ -61,6 +61,10 @@ function start() {
       src: './img/bufu.png'
     },
     {
+      id: 'music',
+      src: './audio/qitian.mp3'
+    },
+    {
       id: 'js',
       src: './dist/main.js'
     },
@@ -113,6 +117,10 @@ function start() {
       src: './img/zhuchuang.jpg'
     },
     {
+      id: 'price',
+      src: './img/price.jpg'
+    },
+    {
       id: 'video',
       src: './img/video.jpg'
     },
@@ -139,12 +147,12 @@ function start() {
     {
       id: 'cloud5',
       src: './img/cloud5.png'
+    },
+    {
+      id: 'poster',
+      src: './img/poster.jpg'
     }
   ]);
-  queue.loadFile({
-    id: 'music',
-    src: './audio/qitian.mp3'
-  });
 }
 function showHomepage() {
   console.log('homepage');
