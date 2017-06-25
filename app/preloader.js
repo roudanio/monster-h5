@@ -2,6 +2,7 @@
  * Created by meathill on 2017/6/24.
  */
 
+/* global BASE_PATH */
 /**
  * 开始加载资源
  */
@@ -36,7 +37,7 @@ function onProgress(event) {
   bar.style.width = `${event.progress * 82}%`;
 }
 function start() {
-  queue = new createjs.LoadQueue();
+  queue = new createjs.LoadQueue(true, BASE_PATH);
   queue.installPlugin(createjs.Sound);
   queue.on('fileload', onFileLoaded);
   queue.on('progress', onProgress);
@@ -46,6 +47,7 @@ function start() {
     src: './img/wukong.png'
   });
   queue.loadManifest([
+    '//cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css',
     {
       id: 'homepage',
       src: './img/homepage.jpg'
@@ -116,7 +118,7 @@ function start() {
     },
     {
       id: 'back-button',
-      src: './img/back.png'
+      src: './img/back-button.png'
     },
     {
       id: 'cloud1',

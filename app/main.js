@@ -6,8 +6,9 @@ import {Router} from 'director';
 import $ from 'sizzle';
 import Player from './component/player';
 import Homepage from './view/homepage';
+import Clouds from './view/clouds';
 import * as template from './component/template';
-import {next, sleep} from './helper/next';
+import {sleep} from './helper/next';
 
 class App {
   constructor(queue) {
@@ -16,7 +17,6 @@ class App {
     this.createRouter();
     this.delegateEvent();
     this.showHomepage();
-
   }
 
   createPage(name) {
@@ -48,18 +48,30 @@ class App {
   }
 
   homepage() {
-    debugger;
-    $('.page:not(.hide)')[0].classList.add('out');
+    let page = $('.page:not(.hide)')[0];
+    if (!page) {
+      return;
+    }
+    this.clouds.show();
+    sleep(1)
+      .then(() => {
+        page.classList.add('out');
+      });
   }
 
   toPage(page) {
-    if (!page || page === 'home') {
+    if (!page || page === 'home' || !this.clouds) {
       this.homepage();
       return;
     }
     let el = this.pages[page] || this.createPage(page);
     this.pages[page] = el;
-    el.classList.remove('out');
+    this.clouds.show();
+    sleep(1)
+      .then(() => {
+        el.classList.remove('hide');
+        el.classList.remove('out');
+      });
   }
 
   onTransitionEnd(event) {

@@ -1,2 +1,27 @@
 #clouds
   z-index 1024
+
+  img
+    width 100%
+    position absolute
+    opacity 0
+    transition .4s opacity
+
+    &.show
+      opacity 1
+
+  for n in 1..5
+    :nth-child({n})
+      animation-delay .2s * (n - 1)
+
+  :first-child
+    top 41.6791604%
+
+  :nth-child(3)
+    top 4.4227886%
+
+  :nth-child(4)
+    top 22.4887556%
+
+  :nth-child(5)
+    top 55.2473763%
