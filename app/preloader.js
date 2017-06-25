@@ -93,6 +93,50 @@ function start() {
     {
       id: 'link6',
       src: './img/link6.png'
+    },
+    {
+      id: 'about',
+      src: './img/about.jpg'
+    },
+    {
+      id: 'chupin',
+      src: './img/chupin.jpg'
+    },
+    {
+      id: 'intro',
+      src: './img/intro.jpg'
+    },
+    {
+      id: 'zhuchuang',
+      src: './img/zhuchuang.jpg'
+    },
+    {
+      id: 'video',
+      src: './img/video.jpg'
+    },
+    {
+      id: 'back-button',
+      src: './img/back.png'
+    },
+    {
+      id: 'cloud1',
+      src: './img/cloud1.png'
+    },
+    {
+      id: 'cloud2',
+      src: './img/cloud2.png'
+    },
+    {
+      id: 'cloud3',
+      src: './img/cloud3.png'
+    },
+    {
+      id: 'cloud4',
+      src: './img/cloud4.png'
+    },
+    {
+      id: 'cloud5',
+      src: './img/cloud5.png'
     }
   ]);
   queue.loadFile({

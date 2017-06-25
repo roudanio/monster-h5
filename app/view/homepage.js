@@ -77,12 +77,17 @@ export default class Homepage {
   }
 
   delegateEvent() {
-    this.el.addEventListener('touchstart', this.onTouchStart.bind(this), false);
+    this.cover.addEventListener('touchstart', this.onTouchStart.bind(this), false);
     this.cover.addEventListener('click', event => {
       if (event.target.tagName.toLowerCase() === 'div') {
         return;
       }
       this.cover.classList.add('slideUp');
+      next(this.cover)
+        .then(() => {
+          this.cover.classList.add('hide');
+          this.nav.classList.remove('backdrop');
+        });
     }, false);
   }
 
@@ -102,6 +107,8 @@ export default class Homepage {
         self.cover.classList.add('slideUp');
         next(self.cover)
           .then(() => {
+            self.cover.style.transform = '';
+            self.cover.classList.add('hide');
             self.nav.classList.remove('backdrop');
           });
       } else {

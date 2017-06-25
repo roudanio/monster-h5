@@ -9,3 +9,12 @@ export let navTemplate = `
 <a href="#/price" class="price"></a>
 <a href="#/video" class="video"></a>
 `;
+
+export let page = `
+  <a href="#/home" class="back-button"></a>
+`;
+
+export let video = `
+  <video src="" width="300" height="200"></video>
+  <a href="#/home" class="back-button"></a>
+`;
