@@ -97,7 +97,7 @@ export default class Homepage {
     let offset = 0;
     function onTouchMove(event) {
       let newY = event.touches[0].screenY;
-      offset = newY >= y ? 0 : (y - newY) * 2;
+      offset = newY >= y ? 0 : (y - newY);
       self.cover.style.transform = `translate3d(0,-${offset}px,0)`;
     }
     this.el.addEventListener('touchmove', onTouchMove, false);

@@ -21,7 +21,7 @@ class App {
   }
 
   createPage(name) {
-    let html = name === 'video' ? template.video : template.page;
+    let html = template[name];
     let page = document.createElement('div');
     page.innerHTML = html;
     page.className = `container page out ${name}`;
@@ -45,7 +45,8 @@ class App {
 
   createRouter() {
     let router = Router({
-      '/:page': this.toPage.bind(this)
+      '/:page': this.toPage.bind(this),
+      '/zhuchuang/:name': this.showHaibao.bind(this)
     });
     router.init('/home');
   }
@@ -64,6 +65,18 @@ class App {
       .then(() => {
         page.classList.add('out');
       });
+  }
+
+  showHaibao(name) {
+    let haibao = document.createElement('div');
+    haibao.className = 'haibao fadeInUp animated';
+    haibao.innerHTML = template.haibao.replace('{{name}}', name);
+    haibao.addEventListener('click', function onClick() {
+      location.hash = '/zhuchuang/';
+      document.body.removeChild(haibao);
+      haibao.removeEventListener('click', onClick);
+    }, false);
+    document.body.appendChild(haibao);
   }
 
   toPage(page) {
