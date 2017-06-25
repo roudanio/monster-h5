@@ -2,13 +2,14 @@
  * Created by meathill on 2017/6/23.
  */
 
-import {Router} from 'director';
 import $ from 'sizzle';
 import Player from './component/player';
 import Homepage from './view/homepage';
 import Clouds from './view/clouds';
 import * as template from './component/template';
 import {sleep} from './helper/next';
+
+/* global Router */
 
 class App {
   constructor(queue) {

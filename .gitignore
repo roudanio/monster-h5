@@ -14,4 +14,4 @@ assets
 
 # build
 dist
-css
+/css

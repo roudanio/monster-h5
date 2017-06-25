@@ -47,7 +47,7 @@ function start() {
     src: './img/wukong.png'
   });
   queue.loadManifest([
-    '//cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css',
+    '//rawgit.com/flatiron/director/master/build/director.min.js',
     {
       id: 'homepage',
       src: './img/homepage.jpg'
