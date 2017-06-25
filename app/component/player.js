@@ -6,7 +6,7 @@ export default class Player {
     this.createElement();
     this.delegateEvent();
     this.isPlaying = true;
-    //this.player = createjs.Sound.play('music');
+    this.player = createjs.Sound.play('music');
   }
 
   createElement() {

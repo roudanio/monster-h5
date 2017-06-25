@@ -24,7 +24,7 @@ gulp.task('clear', () => {
 gulp.task('stylus', () => {
   gulp.src('./styl/*.styl')
     .pipe(stylus({
-      'include-css': true
+      'include css': true
     }))
     .pipe(cleanCSS({
       level: 2
