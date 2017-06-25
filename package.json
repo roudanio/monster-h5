@@ -10,7 +10,7 @@
     "dev": "webpack-dev-server"
 =======
     "test": "echo \"Error: no test specified\" && exit 1",
-    "stylus": "mkdir css & stylus -w -m styl/screen.styl styl/preloader.styl -o css/",
+    "stylus": "mkdir css & stylus -w -m --include-css styl/screen.styl styl/preloader.styl -o css/",
     "webpack": "webpack"
 >>>>>>> d258515... 架构
   },
