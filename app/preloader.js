@@ -35,6 +35,8 @@ function onProgress(event) {
   bar.style.width = `${event.progress * 82}%`;
 }
 function start() {
+  let query = location.search;
+  let mp3 = query ? 'daiquan' : 'qitian';
   queue = new createjs.LoadQueue(true, BASE_PATH);
   queue.installPlugin(createjs.Sound);
   queue.on('fileload', onFileLoaded);
@@ -46,7 +48,7 @@ function start() {
   });
   queue.loadFile({
     id: 'music',
-    src: './audio/qitian.mp3'
+    src: `./audio/${mp3}.mp3`
   });
   queue.loadManifest([
     '//cdn.staticfile.org/Director/1.2.8/director.min.js',

@@ -20,13 +20,13 @@ export let price = page;
 
 export let zhuchuang = `
   <div class="haibao-link">
-    <a href="#/zhuchuang/pengyuyan" class="col3"></a>
-    <a href="#/zhuchuang/nini" class="col3"></a>
-    <a href="#/zhuchuang/ouhao" class="col2"></a>
-    <a href="#/zhuchuang/yuwenle" class="col3"></a>
-    <a href="#/zhuchuang/zhengshuang" class="col2"></a>
-    <a href="#/zhuchuang/qiaoshan" class="col2"></a>
-    <a href="#/zhuchuang/yangdi" class="col2"></a>
+    <a href="#/zhuchuang/pengyuyan"></a>
+    <a href="#/zhuchuang/nini"></a>
+    <a href="#/zhuchuang/ouhao"></a>
+    <a href="#/zhuchuang/yuwenle"></a>
+    <a href="#/zhuchuang/zhengshuang"></a>
+    <a href="#/zhuchuang/qiaoshan"></a>
+    <a href="#/zhuchuang/yangdi"></a>
     <a href="#/zhuchuang/yufeihong" class="bottom"></a>
   </div>
   <a href="#/home" class="back-button"></a>
