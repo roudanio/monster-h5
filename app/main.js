@@ -37,7 +37,7 @@ class App {
       video.poster = url;
       video.addEventListener('play', () => {
         let event = new CustomEvent('video');
-        $('#player').dispatchEvent(event);
+        $('#player')[0].dispatchEvent(event);
       }, false);
     }
     return page;
