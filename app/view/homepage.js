@@ -24,7 +24,7 @@ export default class Homepage {
     let wukong = $('.in')[0];
     wukong.className = 'wukong';
     wukong = el.appendChild(wukong);
-    let offset = document.body.clientHeight * .371; //50%-12.9%
+    let offset = document.body.clientHeight * .368; //50%-13.2%
     wukong.style.transform = `translate3d(0,${offset}px,0)`;
     let loading = $('#loading')[0];
     loading.classList.add('out');

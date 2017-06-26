@@ -32,7 +32,7 @@ function onProgress(event) {
   if (!preloaderReady) {
     return;
   }
-  bar.style.width = `${event.progress * 82}%`;
+  bar.style.width = `${event.progress * 77.3333334}%`;
 }
 function start() {
   let query = location.search;
@@ -156,7 +156,7 @@ function start() {
 }
 function showHomepage() {
   console.log('homepage');
-  bar.style.width = '82%';
+  bar.style.width = '77.3333334%';
   let app;
   let interval = setInterval(() => {
     if (preloaderReady) {
@@ -172,7 +172,10 @@ let loading = document.getElementById('loading');
 let bar = loading.getElementsByClassName('bar')[0];
 // 加载 preloadjs
 embedScript('//code.createjs.com/createjs-2015.11.26.min.js', () => {
-  createjs.Sound.initializeDefaultPlugins();
+  let event = new TouchEvent('touchstart');
+  document.body.dispatchEvent(event);
+  event = new TouchEvent('touchend');
+  document.body.dispatchEvent(event);
   if ('Promise' in window && window['Promise'] instanceof Function) {
     start();
   } else {
