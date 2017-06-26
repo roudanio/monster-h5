@@ -5,7 +5,7 @@
 import Player from './component/player';
 import {embedScript} from './helper/util';
 
-/* global BASE_PATH */
+/* global BASE_PATH,isWeixin */
 /**
  * 开始加载资源
  */
@@ -23,8 +23,6 @@ function onFileLoaded(event) {
         preloaderReady = true;
       }, false);
     }, 50);
-  } else if (item.id === 'music') {
-    this.player = new Player();
   }
 }
 function onProgress(event) {
@@ -35,20 +33,13 @@ function onProgress(event) {
   bar.style.width = `${event.progress * 77.3333334}%`;
 }
 function start() {
-  let query = location.search;
-  let mp3 = query ? 'daiquan' : 'qitian';
   queue = new createjs.LoadQueue(true, BASE_PATH);
-  queue.installPlugin(createjs.Sound);
   queue.on('fileload', onFileLoaded);
   queue.on('progress', onProgress);
   queue.on('complete', showHomepage);
   queue.loadFile({
     id: 'wukong',
     src: './img/wukong.png'
-  });
-  queue.loadFile({
-    id: 'music',
-    src: `./audio/${mp3}.mp3`
   });
   queue.loadManifest([
     '//cdn.staticfile.org/Director/1.2.8/director.min.js',
@@ -162,6 +153,10 @@ function showHomepage() {
     if (preloaderReady) {
       clearInterval(interval);
       app = new App(queue);
+
+      if (!isWeixin) {
+        autoPlayMusic();
+      }
     }
   }, 1000);
 }
@@ -170,12 +165,9 @@ let queue;
 let preloaderReady = false;
 let loading = document.getElementById('loading');
 let bar = loading.getElementsByClassName('bar')[0];
+let player = new Player();
 // 加载 preloadjs
 embedScript('//code.createjs.com/createjs-2015.11.26.min.js', () => {
-  let event = new TouchEvent('touchstart');
-  document.body.dispatchEvent(event);
-  event = new TouchEvent('touchend');
-  document.body.dispatchEvent(event);
   if ('Promise' in window && window['Promise'] instanceof Function) {
     start();
   } else {

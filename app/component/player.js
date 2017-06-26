@@ -6,7 +6,7 @@ export default class Player {
     this.createElement();
     this.delegateEvent();
     this.isPlaying = true;
-    this.player = createjs.Sound.play('music');
+    this.player = document.getElementById('music');
   }
 
   createElement() {
@@ -31,7 +31,7 @@ export default class Player {
     if (this.isPlaying) {
       this.player.play();
     } else {
-      this.player.stop();
+      this.player.pause();
     }
     this.el.className = this.isPlaying ? '' : 'disabled';
     if (this.isPlaying) {

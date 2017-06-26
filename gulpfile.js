@@ -12,6 +12,7 @@ const uglify = require('gulp-uglify');
 const replace = require('gulp-replace');
 const htmlMin = require('gulp-htmlmin');
 const imageMin = require('gulp-imagemin');
+const inline = require('gulp-inline-source');
 const del = require('del');
 const CDN = require('./cdn.json');
 
@@ -42,6 +43,7 @@ gulp.task('webpack', () => {
 
 gulp.task('html', () => {
   return gulp.src('./index.html')
+    .pipe(inline())
     .pipe(replace('dist/', 'js/'))
     .pipe(replace(/node_modules\/([\w\-\.]+)\/(dist|build\/)?/g, (match, repo) => {
       return CDN[repo];

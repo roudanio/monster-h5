@@ -9,7 +9,6 @@
   <meta name="robots" content="index,follow">
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <meta name="format-detection" content="telephone=no" />
-  <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
 
   <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
   <meta name="renderer" content="webkit">
@@ -33,6 +32,11 @@
   <meta name="msapplication-TileColor" content="#000"/>
   <meta name="msapplication-TileImage" content="img/favicon.png"/>
 
+  <!-- 背景音乐 -->
+  <script inline src="app/music.js"></script>
+
+  <!-- 加载其它 -->
+  <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/preloader.css">
 </head>
@@ -53,6 +57,8 @@
 <div id="clouds" class="container hide">
 
 </div>
+
+<audio id="music" class="hide" preload="auto" loop="loop"></audio>
 
 <script src="dist/preloader.js"></script>
 </body>
