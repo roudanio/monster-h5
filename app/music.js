@@ -3,10 +3,7 @@
  */
 var isWeixin = /micromessenger/i.test(navigator.userAgent.toLowerCase());
 function autoPlayMusic() {
-  var query = location.search;
-  var mp3 = query ? 'qitian' : 'daiquan';
   var audio = document.getElementById('music');
-  audio.src = './audio/' + mp3 + '.mp3';
   audio.play();
 }
 document.addEventListener('WeixinJSBridgeReady', autoPlayMusic, false);

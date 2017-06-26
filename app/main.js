@@ -138,7 +138,7 @@ class App {
       .then(() => {
         embedScript('//res.wx.qq.com/open/js/jweixin-1.2.0.js', () => {
           wx.config({
-            debug: true,
+            debug: false,
             appId: 'wx141307a200984fbe',
             timestamp: 1498492933,
             nonceStr: 'meathill',
@@ -152,7 +152,7 @@ class App {
                 title: '《悟空传》发行通知',
                 desc: '《悟空传》7.13不服来战',
                 link: 'http://qiniu.meathill.com/wukong/',
-                imgUrl: './img/share.jpg'
+                imgUrl: 'http://qiniu.meathill.com/wukong/img/share.jpg'
               });
             });
           });
