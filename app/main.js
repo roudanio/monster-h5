@@ -81,7 +81,7 @@ class App {
     $('.back-button', haibao)[0].appendChild(image);
     haibao.addEventListener('click', function onClick() {
       location.hash = '/zhuchuang/';
-      haibao.classList.remove('fadeInuUp');
+      haibao.classList.remove('fadeInUp');
       haibao.classList.add('fadeOutDown');
       haibao.removeEventListener('click', onClick);
     }, false);
@@ -89,8 +89,16 @@ class App {
   }
 
   toPage(page) {
-    if (page === 'zhuchuang' && $('.zhuchuang.page:not(.hide)').length) {
-      return;
+    if (page === 'zhuchuang') {
+      let haibao = $('.haibao');
+      if (haibao.length) {
+        haibao = haibao[0];
+        haibao.classList.remove('fadeInUp');
+        haibao.classList.add('fadeOutDown');
+      }
+      if ($('.zhuchuang.page:not(.hide)').length) {
+        return;
+      }
     }
     if (!page || page === 'home' || !this.clouds) {
       this.homepage();
