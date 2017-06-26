@@ -172,7 +172,7 @@ let loading = document.getElementById('loading');
 let bar = loading.getElementsByClassName('bar')[0];
 // 加载 preloadjs
 embedScript('//code.createjs.com/createjs-2015.11.26.min.js', () => {
-  createjs.initializeDefaultPlugins();
+  createjs.Sound.initializeDefaultPlugins();
   if ('Promise' in window && window['Promise'] instanceof Function) {
     start();
   } else {
