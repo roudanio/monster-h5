@@ -7,11 +7,13 @@ export default class Player {
     this.delegateEvent();
     this.isPlaying = true;
     this.player = document.getElementById('music');
+    this.player.addEventListener('canplay', this.onCanPlayHandler.bind(this), false);
   }
 
   createElement() {
     let el = this.el = document.createElement('div');
     el.id = 'player';
+    el.className = 'hide';
     el.innerHTML = '<i class="fa fa-music fa-spin"></i>';
     this.icon = el.firstChild;
     document.body.appendChild(el);
@@ -39,5 +41,10 @@ export default class Player {
     } else {
       this.icon.classList.remove('fa-spin');
     }
+  }
+
+  onCanPlayHandler() {
+    this.el.classList.remove('hide');
+    this.player.removeEventListener('canplay', this.onCanPlayHandler);
   }
 }
