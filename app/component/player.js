@@ -7,7 +7,7 @@ export default class Player {
     this.delegateEvent();
     this.isPlaying = true;
     this.player = document.getElementById('music');
-    this.player.addEventListener('canplay', this.onCanPlayHandler.bind(this), false);
+    this.player.addEventListener('play', this.onCanPlayHandler.bind(this), false);
   }
 
   createElement() {
