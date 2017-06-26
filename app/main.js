@@ -147,18 +147,18 @@ class App {
           });
           wx.ready( () => {
             console.log('wx ready');
-            $('#homepage .nav footer')[0].addEventListener('click', () => {
-              wx.onMenuShareAppMessage({
-                title: '《悟空传》发行通知',
-                desc: '《悟空传》7.13不服来战',
-                link: 'http://qiniu.meathill.com/wukong/',
-                imgUrl: 'http://qiniu.meathill.com/wukong/img/share.jpg'
-              });
+            wx.onMenuShareTimeline({
+              title: '《悟空传》发行通知',
+              link: 'http://qiniu.meathill.com/wukong/',
+              imgUrl: 'http://qiniu.meathill.com/wukong/img/share.jpg'
+            });
+            wx.onMenuShareAppMessage({
+              title: '《悟空传》发行通知',
+              desc: '《悟空传》7.13不服来战',
+              link: 'http://qiniu.meathill.com/wukong/',
+              imgUrl: 'http://qiniu.meathill.com/wukong/img/share.jpg'
             });
           });
-          wx.error( res => {
-            console.log('wx error', res);
-          })
         });
       });
   }
