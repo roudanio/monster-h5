@@ -2,17 +2,13 @@
  * Created by meathill on 2017/6/24.
  */
 
+import Player from './component/player';
+import {embedScript} from './helper/util';
+
 /* global BASE_PATH */
 /**
  * 开始加载资源
  */
-function load(src, callback) {
-  let script = document.createElement('script');
-  script.async = true;
-  script.src = src;
-  script.onload = callback;
-  document.body.appendChild(script);
-}
 function onFileLoaded(event) {
   let item = event.item;
   if (item.id === 'wukong') {
@@ -27,6 +23,8 @@ function onFileLoaded(event) {
         preloaderReady = true;
       }, false);
     }, 50);
+  } else if (item.id === 'music') {
+    this.player = new Player();
   }
 }
 function onProgress(event) {
@@ -46,8 +44,12 @@ function start() {
     id: 'wukong',
     src: './img/wukong.png'
   });
+  queue.loadFile({
+    id: 'music',
+    src: './audio/qitian.mp3'
+  });
   queue.loadManifest([
-    '//rawgit.com/flatiron/director/master/build/director.min.js',
+    '//cdn.staticfile.org/Director/1.2.8/director.min.js',
     {
       id: 'homepage',
       src: './img/homepage.jpg'
@@ -59,10 +61,6 @@ function start() {
     {
       id: 'bufu',
       src: './img/bufu.png'
-    },
-    {
-      id: 'music',
-      src: './audio/qitian.mp3'
     },
     {
       id: 'js',
@@ -171,10 +169,10 @@ let preloaderReady = false;
 let loading = document.getElementById('loading');
 let bar = loading.getElementsByClassName('bar')[0];
 // 加载 preloadjs
-load('//code.createjs.com/createjs-2015.11.26.min.js', () => {
+embedScript('//code.createjs.com/createjs-2015.11.26.min.js', () => {
   if ('Promise' in window && window['Promise'] instanceof Function) {
     start();
   } else {
-    load('//cdn.staticfile.org/bluebird/3.5.0/bluebird.min.js', start);
+    embedScript('//cdn.staticfile.org/bluebird/3.5.0/bluebird.min.js', start);
   }
 });

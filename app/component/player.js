@@ -19,18 +19,25 @@ export default class Player {
 
   delegateEvent() {
     this.el.addEventListener('click', () => {
-      if (this.isPlaying) {
-        this.player.stop();
-      } else {
-        this.player.play();
-      }
-      this.isPlaying = !this.isPlaying;
-      this.el.className = this.isPlaying ? '' : 'disabled';
-      if (this.isPlaying) {
-        this.icon.classList.add('fa-spin');
-      } else {
-        this.icon.classList.remove('fa-spin');
-      }
+      this.playPause();
     }, false);
+    this.el.addEventListener('video', () => {
+      this.playPause(false)
+    });
+  }
+
+  playPause(to) {
+    this.isPlaying = to === undefined ? !this.isPlaying : to;
+    if (this.isPlaying) {
+      this.player.play();
+    } else {
+      this.player.stop();
+    }
+    this.el.className = this.isPlaying ? '' : 'disabled';
+    if (this.isPlaying) {
+      this.icon.classList.add('fa-spin');
+    } else {
+      this.icon.classList.remove('fa-spin');
+    }
   }
 }

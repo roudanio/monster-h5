@@ -39,4 +39,5 @@ export let video = `
 
 export let haibao = `
   <img src="./img/haibao/{{name}}.jpg">
+  <a href="#/zhuchuang" class="back-button"></a>
 `;
