@@ -8,6 +8,7 @@ export let navTemplate = `
 <a href="#/zhuchuang" class="zhuchuang"></a>
 <a href="#/price" class="price"></a>
 <a href="#/video" class="video"></a>
+<footer></footer>
 `;
 
 let page = `

@@ -134,6 +134,32 @@ class App {
     homepage.actions
       .then(() => {
         this.clouds = new Clouds(this.queue);
+      })
+      .then(() => {
+        embedScript('//res.wx.qq.com/open/js/jweixin-1.2.0.js', () => {
+          wx.config({
+            debug: true,
+            appId: 'wx141307a200984fbe',
+            timestamp: 1498492933,
+            nonceStr: 'meathill',
+            signature: '4fa82fda6408d9ff0fa78c755dd3548dbb6ce27a',
+            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+          });
+          wx.ready( () => {
+            console.log('wx ready');
+            $('#homepage .nav footer')[0].addEventListener('click', () => {
+              wx.onMenuShareAppMessage({
+                title: '《悟空传》发行通知',
+                desc: '《悟空传》7.13不服来战',
+                link: 'http://qiniu.meathill.com/wukong/',
+                imgUrl: './img/share.jpg'
+              });
+            });
+          });
+          wx.error( res => {
+            console.log('wx error', res);
+          })
+        });
       });
   }
 }
