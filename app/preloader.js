@@ -68,28 +68,8 @@ function start() {
       src: './img/nav.jpg'
     },
     {
-      id: 'link1',
-      src: './img/link1.png'
-    },
-    {
-      id: 'link2',
-      src: './img/link2.png'
-    },
-    {
-      id: 'link3',
-      src: './img/link3.png'
-    },
-    {
-      id: 'link4',
-      src: './img/link4.png'
-    },
-    {
-      id: 'link5',
-      src: './img/link5.png'
-    },
-    {
-      id: 'link6',
-      src: './img/link6.png'
+      id: 'links',
+      src: './img/nav.png'
     },
     {
       id: 'about',

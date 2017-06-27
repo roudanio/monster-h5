@@ -2,12 +2,12 @@
  * Created by meathill on 2017/6/25.
  */
 export let navTemplate = `
-<a href="#/about" class="about"></a>
-<a href="#/chupin" class="chupin"></a>
-<a href="#/intro" class="intro"></a>
-<a href="#/zhuchuang" class="zhuchuang"></a>
-<a href="#/price" class="price"></a>
-<a href="#/video" class="video"></a>
+<a href="#/about" class="about nav-link"></a>
+<a href="#/chupin" class="chupin nav-link"></a>
+<a href="#/intro" class="intro nav-link"></a>
+<a href="#/zhuchuang" class="zhuchuang nav-link"></a>
+<a href="#/price" class="price nav-link"></a>
+<a href="#/video" class="video nav-link"></a>
 <footer></footer>
 `;
 
