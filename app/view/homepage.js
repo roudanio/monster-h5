@@ -69,10 +69,6 @@ export default class Homepage {
         nav.style.backgroundImage = `url(${url})`;
         nav.innerHTML = navTemplate;
         this.el.insertBefore(nav, el);
-        let links = $('a', nav);
-        for (let i = 0, len = links.length; i < len; i++) {
-          links[i].appendChild(this.queue.getResult(`link${i + 1}`));
-        }
       });
   }
 

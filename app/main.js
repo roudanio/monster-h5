@@ -46,7 +46,7 @@ class App {
   createNavLinks() {
     let url = this.getResourceURL('links');
     let style = document.createElement('style');
-    style.innerHTML += `.nav-links{ background-image: url(${url}) }`;
+    style.innerHTML += `.nav-link{ background-image: url(${url}) }`;
     document.head.appendChild(style);
   }
 
@@ -61,6 +61,7 @@ class App {
   delegateEvent() {
     document.body.addEventListener('transitionend', this.onTransitionEnd, false);
     document.body.addEventListener('animationend', this.onAnimationEnd, false);
+    document.body.addEventListener('click', this.onClick, false);
   }
 
   getResourceURL(name) {
@@ -161,6 +162,12 @@ class App {
     let target = event.target;
     if (event.animationName === 'fadeOutDown') {
       document.body.removeChild(target);
+    }
+  }
+
+  onClick(event) {
+    if (event.target.tagName.toLowerCase() === 'a' || event.target.parentNode.tagName.toLowerCase() === 'a') {
+      createjs.Sound.play('blade');
     }
   }
 

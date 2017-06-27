@@ -34,6 +34,7 @@ function onProgress(event) {
 }
 function start() {
   queue = new createjs.LoadQueue(true, BASE_PATH);
+  queue.installPlugin(createjs.Sound);
   queue.on('fileload', onFileLoaded);
   queue.on('progress', onProgress);
   queue.on('complete', showHomepage);
@@ -70,6 +71,10 @@ function start() {
     {
       id: 'links',
       src: './img/nav.png'
+    },
+    {
+      id: 'blade',
+      src: './audio/blade.mp3'
     },
     {
       id: 'about',

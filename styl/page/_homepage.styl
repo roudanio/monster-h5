@@ -66,17 +66,34 @@
 
     a
       position absolute
+      width 207px
+      height 44px
+      background-repeat no-repeat
+      background-size 207px
 
-      img
-        width 207px
+      for n in 2..6
+        &:nth-child({n})
+          background-position-y -44px * (n - 1)
 
       @media (min-width 321px) and (max-width 374px)
         &
           width 199px
+          height 42px
+          background-size 199px
+
+          for n in 2..6
+            &:nth-child({n})
+              background-position-y -42px * (n - 1)
 
       @media (max-width 320px)
         &
           width 177px
+          height 38px
+          background-size 177px
+
+          for n in 2..6
+            &:nth-child({n})
+              background-position-y -38px * (n - 1)
 
     .about
       top 8.9955022%
