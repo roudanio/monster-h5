@@ -34,7 +34,7 @@ export let zhuchuang = `
 `;
 
 export let video = `
-  <video src="http://qiniu.meathill.com/video/wukong/trailer.m4v" width="300" height="200"></video>
+  <video src="http://qiniu.meathill.com/video/wukong/trailer.m4v" width="300" height="200" preload="auto"></video>
   <a href="#/home" class="back-button"></a>
 `;
 

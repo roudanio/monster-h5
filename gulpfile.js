@@ -13,6 +13,7 @@ const replace = require('gulp-replace');
 const htmlMin = require('gulp-htmlmin');
 const imageMin = require('gulp-imagemin');
 const inline = require('gulp-inline-source');
+const event = require('event-stream');
 const del = require('del');
 const CDN = require('./cdn.json');
 
@@ -63,8 +64,10 @@ gulp.task('image', () => {
 });
 
 gulp.task('copy', () => {
-  return gulp.src('audio/**')
-    .pipe(gulp.dest(DOCS + 'audio/'));
+  return event.merge(
+    gulp.src('audio/**').pipe(gulp.dest(DOCS + 'audio/')),
+    gulp.src('font/**').pipe(gulp.dest(DOCS + 'font/'))
+  );
 });
 
 gulp.task('default', callback => {

@@ -1,6 +1,30 @@
 html, body
   height 100%
 
+html
+  font-size 16px
+  box-sizing border-box
+
+body
+  background-color #000
+  -webkit-tap-highlight-color rgba(0,0,0,0)
+  font-family -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei",sans-serif
+
+*,
+*::after
+*::before
+  box-sizing inherit
+
 a
   color white
   text-decoration none
+
+@font-face
+  font-family 'huangcao'
+  src url('../font/huangcao.eot')
+  src url('../font/huangcao.eot?#font-spider') format('embedded-opentype'),
+    url('../font/huangcao.woff') format('woff'),
+    url('../font/huangcao.ttf') format('truetype'),
+    url('../font/huangcao.svg') format('svg')
+  font-weight normal
+  font-style normal
