@@ -1,0 +1,57 @@
+#select
+  background-position 38.888888889vw 108.148148148vw
+  background-repeat no-repeat
+  background-size 75.092592593vw 78.518518519vw
+  position fixed
+  top 0
+  left 0
+
+  > *
+    position absolute
+
+  header
+    top 6.018518519vw
+    left 9vw
+    display flex
+    justify-content center
+    align-items center
+
+    .slogan
+      width 54.259259259vw
+
+    .monster
+      width 25vw
+
+  .select-container
+    margin-top 45vw
+    padding 0 13.240740741vw
+
+  .form-label
+    font-weight bold
+    line-height 1.4
+    margin-top 0
+    margin-bottom 1.5em
+
+  .form-option
+    background-color: #ff2400;
+    border: none;
+    border-radius: 5px;
+    box-shadow inset 0 0 #ec8744, inset 0 8px 16px rgba(#e7932f, .59)
+    color: white;
+    font-size: 13px;
+    height: 33.333px;
+    display: block;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    padding: 0 1em;
+
+    + .form-option
+      margin-top 11px
+
+    &:focus
+      outline none
+
+    &:hover,
+    &:active
+      background-image linear-gradient(to bottom, #700505, #60140a)

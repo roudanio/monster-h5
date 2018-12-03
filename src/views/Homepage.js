@@ -28,8 +28,7 @@ export default class Homepage extends Base {
     link.className = 'start-link fadeIn animated';
     const button = document.createElement('button');
     button.className = 'start-button';
-    const fingerPrint = this.queue.getResult('btn', true);
-    const bgUrl = URL.createObjectURL(fingerPrint);
+    const bgUrl = this.getAssetUrl('btn');
     button.style.backgroundImage = `url(${bgUrl})`;
     link.appendChild(button);
     el.appendChild(link);

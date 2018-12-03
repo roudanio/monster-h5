@@ -21,15 +21,17 @@ class H5App extends Base{
 
   showSelectPage() {
     this.pages.homepage.fadeOut();
-    const select = new Select(null, this.queue);
-    document.body.appendChild(select);
-    select.on('complete', () => {
+    const select = this.pages.select = new Select(null, this.queue);
+    document.body.appendChild(select.el);
+    select.on('select', () => {
       this.showResultPage();
     });
   }
 
   showResultPage() {
-
+    this.pages.select.fadeOut();
+    const result = this.pages.result = new Result(null, this.queue);
+    document.body.appendChild(result.el);
   }
 }
 

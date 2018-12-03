@@ -30,6 +30,10 @@ const assets = [
       id: 'btn',
       src: './img/btn.png',
     },
+    {
+      id: 'bg2',
+      src: './img/bg2.png',
+    },
   ],
 ];
 
