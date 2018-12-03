@@ -5,12 +5,42 @@ html(lang="zh-cmn-Hans")
     meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
     title 江湖怪兽
 
-  body
+    meta(
+      name="keywords",
+      content="磨铁,磨铁IP大会,磨铁图书,磨铁文学,磨铁娱乐,悟空传,从你的全世界路过,天意,单恋大作战",
+    )
+    meta(name="description", content="开发：磨铁IP大会。开放IP大池，大家一起来游泳。")
+    meta(name="author", content="Meathill,meathill@gmail.com")
+    meta(name="robots", content="index,follow")
+    meta(name="format-detection", content="telephone=no")
+
+    meta(http-equiv="x-ua-compatible", content="IE=edge,chrome=1")
+    meta(name="renderer", content="webkit")
+    meta(http-equiv="Cache-Control", content="no-siteapp")
+    meta(name="google", value="notranslate")
+
+    meta(name="apple-mobile-web-app-title", content="磨铁 IP 大会")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style", content="black-translucent")
+    meta(name="theme-color", content="#FEDB32")
+    meta(name="msapplication-TileColor", content="#000")
+
+    <!-- 背景音乐 -->
+    script
+      include ../node_modules/wukong/music.js
+
+  body.is-swiper
+
     #loading.container
+      .sk-double-bounce
+        .sk-child.sk-double-bounce1
+        .sk-child.sk-double-bounce2
+
       #progress.animated 0%
 
     .visually-hidden 由
       a(href="https://roudan.io/", target="_blank") 肉蛋工作室
       | 设计开发。
 
-    //audio#music.hide(src="./audio/frog.mp3", preload="auto" loop)
+    if mode === 'production'
+      audio#music.hide(src="./audio/frog.mp3", preload="auto" loop)
