@@ -5,7 +5,6 @@ export default class Loading extends Base {
   constructor(el) {
     super(el);
     el.firstElementChild.classList.add('over');
-    play(document.getElementById('progress'), 'fadeOutUp');
   }
 
   delegateEvents() {
@@ -14,5 +13,9 @@ export default class Loading extends Base {
       this.el.removeEventListener('animationend', onRemove);
     };
     this.el.addEventListener('animationend', onRemove, false);
+  }
+
+  close() {
+    return play(document.getElementById('progress'), 'fadeOutUp');
   }
 }

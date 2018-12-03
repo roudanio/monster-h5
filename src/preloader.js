@@ -17,7 +17,19 @@ const assets = [
       onload(event) {
         document.body.style.backgroundImage = 'url(./img/bg.jpg)';
       },
-    }
+    },
+    {
+      id: 'slogan',
+      src: './img/slogan.png',
+    },
+    {
+      id: 'monster',
+      src: './img/monster.png',
+    },
+    {
+      id: 'btn',
+      src: './img/btn.png',
+    },
   ],
 ];
 

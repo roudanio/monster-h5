@@ -20,6 +20,7 @@
   "dependencies": {
     "animate.css": "^3.7.0",
     "director": "^1.2.8",
+    "eventemitter3": "^3.1.0",
     "normalize.css": "^8.0.1",
     "spinkit": "^1.2.5",
     "wukong": "git@github.com:meathill-freelance/wukong.git#922faac"

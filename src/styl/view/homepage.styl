@@ -1,0 +1,65 @@
+#homepage
+  position relative
+
+  > *
+    position absolute
+
+.slogan
+  width 82.87037037vw
+  height 29.814814815vw
+  top 5.555555556vw
+  left 8.796296296vw
+
+.monster
+  width 67.037037037vw
+  height 81.574074074vw
+  top 34.444444444vw
+  left 16.481481481vw
+
+.info
+  font-size 0.8125rem
+  text-align center
+  top 118.333333333vw
+  width 100%
+  line-height  1.5
+  margin 0
+
+.start-link
+  width 27.222222222vw
+  top 134.259259259vw
+  left 36.203703704vw
+  display flex
+  flex-direction column
+  align-items center
+
+  &::before
+    background white
+    content ''
+    opacity .66
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 3px
+    animation finger-print infinite 4s ease-in-out
+
+  &::after
+    color #e94609
+    content '开始扫描'
+    font-size .75rem
+    font-weight bold
+    line-height 2
+
+.start-button
+  background-color transparent
+  background-size cover
+  border none
+  width 100%
+  height 28.333333333vw
+
+@keyframes finger-print
+  0%, 100%
+    transform translateY(0%)
+
+  50%
+    transform translateY(27.5vw)
