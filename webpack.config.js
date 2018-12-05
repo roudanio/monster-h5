@@ -46,6 +46,8 @@ module.exports = {
       templateParameters: {
         mode: 'dev',
       },
+      chunks: ['preloader'],
+      minify: !devMode,
     }),
     new webpack.DefinePlugin(dev),
     new WriteFilePlugin({

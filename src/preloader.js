@@ -9,6 +9,10 @@ const wukong = new Wukong({
   progress: '#progress',
 });
 
+const link = document.getElementsByTagName('link')[0];
+const href = link.href;
+const hash = href.substring(href.indexOf('.') + 1, href.lastIndexOf('.'));
+
 const assets = [
   [
     'http://unpkg.com/director@1.2.8/build/director.min.js',
@@ -38,6 +42,8 @@ const assets = [
       id: 'result-1',
       src: './img/result1.png',
     },
+    `./main.${hash}.css`,
+    `./main.${hash}.js`,
   ],
 ];
 
