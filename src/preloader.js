@@ -15,7 +15,7 @@ const hash = href.substring(href.indexOf('.') + 1, href.lastIndexOf('.'));
 
 const assets = [
   [
-    'http://unpkg.com/director@1.2.8/build/director.min.js',
+    '//cdn.staticfile.org/Director/1.2.8/director.min.js',
     {
       src: './img/bg.jpg',
       onload(event) {

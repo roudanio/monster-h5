@@ -39,7 +39,7 @@ module.exports = {
     ],
   },
   mode: 'development',
-  devtool: 'sourcemap',
+  devtool: devMode ? 'sourcemap' : false,
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.pug",
