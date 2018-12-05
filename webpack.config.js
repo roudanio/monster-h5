@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const CopyWebapckPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const devMode = process.env.NODE_ENV !== 'production';
 const dev = require('./config/dev');
 
 /* global __dirname */
@@ -25,7 +27,7 @@ module.exports = {
       {
         test: /\.styl(us)?$/,
         use: [
-          'style-loader',
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'stylus-loader',
         ],
@@ -55,7 +57,12 @@ module.exports = {
         to: 'img',
         toType: 'dir',
       },
-    ])
+    ]),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: devMode ? '[name].css' : '[name].[hash].css',
+    }),
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),

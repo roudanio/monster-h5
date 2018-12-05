@@ -11,7 +11,7 @@ const wukong = new Wukong({
 
 const assets = [
   [
-    '//unpkg.com/director@1.2.8/build/director.min.js',
+    'http://unpkg.com/director@1.2.8/build/director.min.js',
     {
       src: './img/bg.jpg',
       onload(event) {
