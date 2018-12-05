@@ -27,7 +27,7 @@ export default class Select extends Base {
     const monster = this.queue.getResult('monster');
     monster.className = 'monster';
     header.appendChild(monster);
-    header.className = 'form-header animated slideInDown';
+    header.className = 'form-header animated slideInDown faster';
     const slogan = this.queue.getResult('slogan');
     slogan.className = 'slogan';
     header.appendChild(slogan);
@@ -43,9 +43,11 @@ export default class Select extends Base {
   }
 
   delegateEvents() {
+    super.delegateEvents();
     this.el.addEventListener('click', event => {
-      if (event.target.tagName.toLowerCase() === 'button') {
-        this.emit('select', event.dataset.index);
+      const {target} = event;
+      if (target.tagName.toLowerCase() === 'button') {
+        this.emit('select', target.dataset.index);
       }
     }, false);
   }
@@ -56,13 +58,13 @@ export default class Select extends Base {
 
     const [{q, options}] = question;
     const label = document.createElement('p');
-    label.className = 'form-label';
+    label.className = 'form-label animated tada';
     label.innerText = q;
     container.appendChild(label);
 
     options.forEach((option, index) => {
       const button = document.createElement('button');
-      button.className = 'form-option';
+      button.className = 'form-option animated fadeInDown';
       button.innerText = option;
       button.dataset.index = index;
       container.appendChild(button);

@@ -3,6 +3,8 @@ import Base from 'wukong/H5App.abstract';
 import Loading from './views/loading';
 import Homepage from "./views/Homepage";
 import Select from './views/select';
+import Result from "./views/result";
+
 
 class H5App extends Base{
   showHomepage() {

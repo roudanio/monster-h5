@@ -1,0 +1,24 @@
+@import "../component/button.styl"
+
+#result
+  display flex
+  justify-content center
+  align-items center
+  flex-direction column
+
+  .result
+    width 80.555555556vw
+    height 117.5vw
+
+.btn-group
+  display flex
+  justify-content space-between
+  width 100%
+  padding 4.074074074vw 6.388888889vw 0
+
+.result-button
+  @extend .simple-button
+  font-size 16px
+
+  + .result-button
+    margin-left 1.944444444vw

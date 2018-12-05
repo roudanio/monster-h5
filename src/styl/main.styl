@@ -4,7 +4,9 @@
 @import "~animate.css/source/fading_entrances/fadeIn.css"
 @import "~animate.css/source/fading_entrances/fadeInDown.css"
 @import "~animate.css/source/fading_entrances/fadeInUp.css"
+@import "~animate.css/source/sliding_entrances/slideInDown.css"
 @import "~animate.css/source/attention_seekers/heartBeat.css"
+@import "~animate.css/source/attention_seekers/tada.css"
 
 .sk-double-bounce.over
   .sk-child
@@ -25,6 +27,13 @@
     -webkit-transform: scale(1);
     transform: scale(1);
 
+.hide
+  display none !important
+
+// component
+@import "component/button.styl"
+
 // views
 @import "view/homepage.styl"
 @import "view/select.styl"
+@import "view/result.styl"

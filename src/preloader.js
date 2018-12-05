@@ -34,6 +34,10 @@ const assets = [
       id: 'bg2',
       src: './img/bg2.png',
     },
+    {
+      id: 'result-1',
+      src: './img/result1.png',
+    },
   ],
 ];
 
