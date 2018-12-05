@@ -10,7 +10,8 @@ const wukong = new Wukong({
 });
 
 const link = document.getElementsByTagName('link')[0];
-const href = link.href;
+let href = link.href;
+href = href.substring(href.lastIndexOf('/') + 1);
 const hash = href.substring(href.indexOf('.') + 1, href.lastIndexOf('.'));
 
 const assets = [
