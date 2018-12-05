@@ -23,7 +23,7 @@
     "eventemitter3": "^3.1.0",
     "normalize.css": "^8.0.1",
     "spinkit": "^1.2.5",
-    "wukong": "git@github.com:meathill-freelance/wukong.git#922faac"
+    "wukong": "git@github.com:meathill-freelance/wukong.git#922e1e01a329ecc6df8b8d0469866e38b77bd0d9"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
