@@ -26,16 +26,13 @@ export default class Homepage extends Base {
 
     const link = document.createElement('div');
     link.className = 'start-link fadeIn animated';
-    const button = document.createElement('button');
-    button.className = 'start-button';
+    const a = document.createElement('a');
+    a.className = 'start-button';
+    a.href = '#/select';
     const bgUrl = this.getAssetUrl('btn');
-    button.style.backgroundImage = `url(${bgUrl})`;
-    link.appendChild(button);
+    a.style.backgroundImage = `url(${bgUrl})`;
+    link.appendChild(a);
     el.appendChild(link);
-
-    button.addEventListener('click', () => {
-      this.emit('start');
-    });
 
     return el;
   }

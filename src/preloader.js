@@ -1,18 +1,19 @@
 import './styl/preloader.styl';
-
+import './styl/main.styl';
 import Wukong from 'wukong/wukong';
 
 /* global BASE_PATH */
+
+const scripts = document.getElementsByTagName('script');
+const script = scripts[scripts.length - 1];
+let href = script.src;
+href = href.substring(href.lastIndexOf('/') + 1);
+const hash = href.substring(href.indexOf('.') + 1, href.lastIndexOf('.'));
 
 const wukong = new Wukong({
   loading: '#loading',
   progress: '#progress',
 });
-
-const link = document.getElementsByTagName('link')[0];
-let href = link.href;
-href = href.substring(href.lastIndexOf('/') + 1);
-const hash = href.substring(href.indexOf('.') + 1, href.lastIndexOf('.'));
 
 const assets = [
   [
@@ -43,7 +44,6 @@ const assets = [
       id: 'result-1',
       src: './img/result1.png',
     },
-    `./main.${hash}.css`,
     `./main.${hash}.js`,
   ],
 ];

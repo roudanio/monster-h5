@@ -13,13 +13,6 @@ const question = [
 ];
 
 export default class Select extends Base {
-  constructor(el, queue) {
-    super(el, queue, {
-      id: 'select',
-      className: 'container select',
-    });
-  }
-
   createElement(options) {
     const el = super.createElement(options);
 
@@ -48,6 +41,7 @@ export default class Select extends Base {
       const {target} = event;
       if (target.tagName.toLowerCase() === 'button') {
         this.emit('select', target.dataset.index);
+        this.router.setRoute('result');
       }
     }, false);
   }

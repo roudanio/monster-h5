@@ -1,13 +1,6 @@
 import Base from 'wukong/View.abstract';
 
 export default class Result extends Base {
-  constructor(el, queue) {
-    super(el, queue, {
-      id: 'result',
-      className: 'result container',
-    });
-  }
-
   createElement(options) {
     const el = super.createElement(options);
 
@@ -19,16 +12,19 @@ export default class Result extends Base {
     div.className = 'btn-group';
     el.appendChild(div);
 
-    const redo = this.createButton('再测一次', div);
-    const buy = this.createButton('怪兽轰趴', div);
+    const redo = this.createButton('再测一次', div, 'select');
+    const buy = this.createButton('怪兽轰趴', div, 'http://blog.meathill.com');
     const share = this.createButton('呼叫同伴', div);
 
     return el;
   }
 
-  createButton(label, div) {
-    const btn = document.createElement('button');
+  createButton(label, div, link) {
+    const btn = document.createElement(link ? 'a' : 'button');
     btn.innerText = label;
+    if (link) {
+      btn.href = link;
+    }
     btn.className = 'result-button';
     div.appendChild(btn);
   }

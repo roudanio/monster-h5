@@ -51,7 +51,8 @@ module.exports = {
     }),
     new webpack.DefinePlugin(dev),
     new WriteFilePlugin({
-      test: /\.jpg|png$/,
+      test: /\.css$/,
+      useHashIndex: true,
     }),
     new CopyWebapckPlugin([
       {
