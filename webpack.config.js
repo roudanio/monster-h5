@@ -60,6 +60,11 @@ module.exports = {
         to: 'img',
         toType: 'dir',
       },
+      {
+        from: 'audio',
+        to: 'audio',
+        toType: 'dir',
+      },
     ]),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output

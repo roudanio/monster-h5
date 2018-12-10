@@ -41,8 +41,36 @@ const assets = [
       src: './img/bg2.png',
     },
     {
-      id: 'result-1',
-      src: './img/result1.png',
+      id: 'music',
+      src: './audio/bg.mp3',
+    },
+    {
+      id: 'gutianle',
+      src: './img/gutianle.png',
+    },
+    {
+      id: 'zhoudongyu',
+      src: './img/zhoudongyu.png',
+    },
+    {
+      id: 'chenxuedong',
+      src: './img/chenxuedong.png',
+    },
+    {
+      id: 'guobiting',
+      src: './img/guobiting.png',
+    },
+    {
+      id: 'btn1',
+      src: './img/btn1.png',
+    },
+    {
+      id: 'btn2',
+      src: './img/btn2.png',
+    },
+    {
+      id: 'btn3',
+      src: './img/btn3.png',
     },
     `./main.${hash}.js`,
   ],

@@ -28,6 +28,10 @@
     margin-top 45vw
     padding 0 13.240740741vw
 
+    &.grid
+      display flex
+      flex-wrap wrap
+
   .form-label
     font-weight bold
     line-height 1.4
@@ -46,10 +50,31 @@
     &:focus
       outline none
 
+    &:hover,
+    &:active
+      background-image linear-gradient(to bottom, #700505, #60140a)
+
+  .form-option-item
+    flex 1 0 45%
+
+    img
+      display block
+      max-width 100%
+      transform scale(1.125)
+      margin-bottom 5px
+
+    .form-option
+      text-align center
+
+    &:nth-child(2n)
+      margin-right 2.5vw
+
+    &:nth-child(n + 4)
+      margin-top 2.5vw
+
+  .form-option,
+  .form-option-item
     for n in (1..4)
       &:nth-of-type({n})
         animation-delay .33s * n + .8s
 
-    &:hover,
-    &:active
-      background-image linear-gradient(to bottom, #700505, #60140a)

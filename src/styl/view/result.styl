@@ -6,9 +6,8 @@
   align-items center
   flex-direction column
 
-  .result
-    width 80.555555556vw
-    height 117.5vw
+  .result-image
+    width 97.87037037vw
 
 .btn-group
   display flex
@@ -17,8 +16,17 @@
   padding 4.074074074vw 6.388888889vw 0
 
 .result-button
-  @extend .simple-button
-  font-size 16px
+  margin 0
+  padding 0
+  width 27.87037037vw
+  filter drop-shadow(0 5px 0 9px rgba(#1e0505, .36))
+  transition .4s transform
 
-  + .result-button
-    margin-left 1.944444444vw
+  img
+    display block
+    max-width 100%
+
+  &:hover,
+  &:active
+    filter none
+    transform translateY(2.5px)
