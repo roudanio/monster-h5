@@ -6,6 +6,17 @@
   align-items center
   flex-direction column
 
+  .result-container
+    position relative
+
+  .score
+    color white
+    font-size 6.111111111vw
+    font-weight bold
+    position absolute
+    width 18.518518519vw
+    text-align center
+
   .result-image
     width 97.87037037vw
     height 127.5386667vw
@@ -27,6 +38,96 @@
     font-size 4.259259259vw
     line-height 5vw
     margin 0 0 1vw
+
+  for key in 'cute' 'berserk' 'wisdom' 'money' 'brave'
+    .result-{key} ~ .{key}
+      font-size 9.099074074vw
+      width 27.572222222vw
+
+.result-cute
+  ~ .cute
+    top 22vw
+    left 11.75vw
+  ~ .berserk
+    top 99.5vw
+    left 23.25vw
+  ~ .wisdom
+    top 104.5vw
+    left 44.65vw
+  ~ .money
+    top 81vw
+    left 9.5vw
+  ~ .brave
+    top 98.75vw
+    left 68.85vw
+
+.result-berserk
+  ~ .cute
+    top 94vw
+    left 71vw
+  ~ .berserk
+    top 18vw
+    left 34.75vw
+  ~ .wisdom
+    top 104.15vw
+    left 51.45vw
+  ~ .money
+    top 94vw
+    left 8.5vw
+  ~ .brave
+    top 104.5vw
+    left 28vw
+
+.result-wisdom
+  ~ .wisdom
+    top 17vw
+    left 35vw
+  ~ .cute
+    top 104.5vw
+    left 21.9vw
+  ~ .berserk
+    top 104.5vw
+    left 55.5vw
+  ~ .money
+    top 80.5vw
+    left 7.2vw
+  ~ .brave
+    top 82.5vw
+    left 71.6vw
+
+.result-money
+  ~ .cute
+    top 100vw
+    left 54.75vw
+  ~ .berserk
+    top 98vw
+    left 8.25vw
+  ~ .wisdom
+    top 105.5vw
+    left 30.35vw
+  ~ .money
+    top 21.5vw
+    left 10.15vw
+  ~ .brave
+    top 81.5vw
+    left 70.6vw
+
+.result-brave
+  ~ .cute
+    top 94vw
+    left 69.5vw
+  ~ .berserk
+    top 104.5vw
+    left 49vw
+  ~ .wisdom
+    top 94.5vw
+    left 9.15vw
+  ~ .money
+    top 104.5vw
+    left 28vw
+  ~ .brave
+    top 19vw
+    left 62vw
 
 .btn-group
   display flex
@@ -51,3 +152,37 @@
   &:active
     filter none
     transform translateY(2.5px)
+
+.share
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100%
+  background #FEDB32 center/cover
+  display flex
+  flex-direction column
+  align-items center
+
+  .tip
+    background-repeat: no-repeat;
+    background-size: cover;
+    color white
+    font-size 5.543518519vw
+    text-align: center;
+    width 68.425925926vw
+    height 14.259259259vw
+    align-self flex-end
+    padding: 5.2vw 3vw 0 0;
+    margin: 3.240740741vw 4.722222222vw 12.592592593vw 0;
+
+  .slogan
+    width 60vw
+    margin-left 2vw
+
+  .share-pic
+    width 77.222222222vw
+
+  p
+    font-size 6.172222222vw
+    line-height 1.5

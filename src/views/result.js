@@ -1,5 +1,6 @@
 import Base from 'wukong/View.abstract';
 import DataBus from '../data/bus';
+import {play, sleep} from "wukong/helper/next";
 
 const texts = {
   cute: {
@@ -27,13 +28,33 @@ const texts = {
 export default class Result extends Base {
   constructor(el, queue, options) {
     super(el, queue, options);
+    this.container = this.el.getElementsByClassName('result-container')[0];
+  }
+  delegateEvents() {
+    super.delegateEvents();
 
     this.queue.on('complete', this.onLoadComplete, this);
+    this.share = this.el.getElementsByClassName('share')[0];
+    this.el.getElementsByClassName('share-button')[0].addEventListener('click', () => {
+      this.share.classList.remove('hide');
+      play(this.share, 'fadeIn')
+        .then(() => {
+          this.share.classList.remove('fadeIn');
+        });
+    }, false);
+    this.share.addEventListener('click', () => {
+      play(this.share, 'fadeOut')
+        .then(() => {
+          this.share.classList.add('hide');
+          this.share.classList.remove('fadeOut');
+        });
+    });
   }
 
   enter() {
     super.enter();
     this.el.classList.remove('fadeOut');
+    this.scores = [];
 
     const result = Object.assign({}, DataBus.result);
     let total = 0;
@@ -48,7 +69,12 @@ export default class Result extends Base {
       }
     }
     for (let prop in result) {
-      result[prop] = Math.round(result[prop] / total * 100);
+      const percent = Math.round(result[prop] / total * 100);
+      const div = document.createElement('div');
+      div.className = 'score animated hide ' + prop;
+      div.innerText = percent + '%';
+      this.scores.push(div);
+      this.container.appendChild(div);
     }
 
     const key = this.key = `result-${maxKey}`;
@@ -68,6 +94,7 @@ export default class Result extends Base {
       .then(() => {
         this.image.classList.add('invisible');
         this.image = null;
+        this.scores.forEach(item => item.remove());
       });
   }
 
@@ -76,9 +103,20 @@ export default class Result extends Base {
     image.className = `result-image ${this.key} animated`;
     const placeholder = this.el.getElementsByClassName('result-image')[0];
     placeholder.replaceWith(image);
-    setTimeout(() => {
-      this.image.classList.add('tada');
-    }, 500);
+    sleep(.5)
+      .then(() => {
+        return play(this.image, 'tada');
+      })
+      .then(() => {
+        return this.scores.reduce((p, item ) => {
+          return p
+            .then(() => {
+              item.classList.remove('hide');
+              play(item, 'tada');
+              return sleep(.25);
+            })
+        }, Promise.resolve());
+      });
   }
 
   onLoadComplete() {

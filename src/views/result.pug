@@ -1,7 +1,8 @@
 h1
 p.lead
 
-.result-image
+.result-container
+  .result-image
 
 .btn-group
   a.result-button(href="#/select")
@@ -11,11 +12,11 @@ p.lead
     href="https://h5.m.taopiaopiao.com/app/movie/pages/index/show-detail.html?showid=215417",
   )
     img(src="{{btn2}}")
-  button.result-button(type="button")
+  button.result-button.share-button(type="button")
     img(src="{{btn3}}")
 
-.share.hide
-  .tip 召集更多的队友找怪物
+.share.hide.animated(style="background-image:url(./img/bg.jpg)")
+  .tip(style="background-image:url(./img/share-btn-bg.png)") 召集更多的队友找怪物
   img.slogan(src="{{slogan}}")
   img.share-pic(src="{{share}}")
   p 快去召唤你的小伙伴哦~
