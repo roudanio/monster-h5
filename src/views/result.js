@@ -1,6 +1,29 @@
 import Base from 'wukong/View.abstract';
 import DataBus from '../data/bus';
 
+const texts = {
+  cute: {
+    title: '萌值爆表',
+    description: '嘤嘤怪中的战斗机、好运小迷糊、自带软萌BGM、高调敛财低调炫富、一人顶一个战斗连',
+  },
+  berserk: {
+    title: '战力惊人',
+    description: '该出手时绝不手软、肌肉天使、极速输出连环炮、一言不合正面刚、S级智多星',
+  },
+  wisdom: {
+    title: '智商超群',
+    description: '团队智商担当、一针见血段子手、能动嘴的绝不动手、活体“印钞机”、一心向钱冲',
+  },
+  money: {
+    title: '吸金能手',
+    description: '天选锦鲤、脑子转的比算盘快、高调敛财低调炫富、遇事不慌走路嚣张、可爱到冒泡',
+  },
+  brave: {
+    title: '果敢神勇',
+    description: '天生王者范儿、一言不合正面刚、从不纠结星人、小嘴叭叭的、团宠体质',
+  },
+};
+
 export default class Result extends Base {
   constructor(el, queue, options) {
     super(el, queue, options);
@@ -8,32 +31,10 @@ export default class Result extends Base {
     this.queue.on('complete', this.onLoadComplete, this);
   }
 
-  createElement(options) {
-    const el = super.createElement(options);
-
-    const div = this.buttons = document.createElement('div');
-    div.className = 'btn-group';
-    el.appendChild(div);
-
-    const redo = this.createButton('btn1', div, '#/select');
-    const buy = this.createButton('btn2', div, 'https://h5.m.taopiaopiao.com/app/movie/pages/index/show-detail.html?showid=215417');
-    const share = this.createButton('btn3', div);
-
-    return el;
-  }
-
-  createButton(label, div, link) {
-    const btn = document.createElement(link ? 'a' : 'button');
-    const image = this.queue.getResult(label);
-    btn.appendChild(image);
-    if (link) {
-      btn.href = link;
-    }
-    btn.className = 'result-button';
-    div.appendChild(btn);
-  }
-
   enter() {
+    super.enter();
+    this.el.classList.remove('fadeOut');
+
     const result = Object.assign({}, DataBus.result);
     let total = 0;
     let max = 0;
@@ -52,6 +53,9 @@ export default class Result extends Base {
 
     const key = this.key = `result-${maxKey}`;
     const image = this.queue.getResult(key);
+    const text = texts[maxKey];
+    this.el.getElementsByTagName('h1')[0].innerText = text.title;
+    this.el.getElementsByClassName('lead')[0].innerText = text.description;
     if (!image) {
       this.queue.loadFile({id: key, src: `./img/${key}.png`});
     } else {
@@ -60,14 +64,21 @@ export default class Result extends Base {
   }
 
   exit() {
-    this.el.removeChild(this.image);
-    this.image = null;
+    return super.exit()
+      .then(() => {
+        this.image.classList.add('invisible');
+        this.image = null;
+      });
   }
 
   showImage(image) {
     this.image = image;
-    image.className = `result-image ${this.key}`;
-    this.el.insertBefore(image, this.buttons);
+    image.className = `result-image ${this.key} animated`;
+    const placeholder = this.el.getElementsByClassName('result-image')[0];
+    placeholder.replaceWith(image);
+    setTimeout(() => {
+      this.image.classList.add('tada');
+    }, 500);
   }
 
   onLoadComplete() {

@@ -149,7 +149,7 @@ export default class Select extends Base {
     super.delegateEvents();
     this.el.addEventListener('click', event => {
       const {target} = event;
-      if (target.tagName.toLowerCase() !== 'button') {
+      if (!/button|img/i.test(target.tagName)) {
         return;
       }
       const {dataset: {index}} = target;
@@ -200,6 +200,7 @@ export default class Select extends Base {
       button.className = 'form-option';
       item.className = 'form-option-item animated fadeInDown';
       const image = this.queue.getResult(avatar);
+      image.dataset.index = index;
       item.appendChild(image);
       item.appendChild(button);
       container.appendChild(item);

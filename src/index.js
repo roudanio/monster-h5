@@ -3,11 +3,16 @@ import Base from 'wukong/H5App.abstract';
 import Loading from './views/loading';
 import Homepage from "./views/Homepage";
 import Select from './views/select';
-import Result from "./views/result";
+import Result from './views/result';
+import ResultTemplate from "./views/result.pug";
 import pages from './views/pages';
 
-const classMap = {
+const templates = {
   select: Select,
+  result: ResultTemplate,
+};
+
+const classMap = {
   result: Result,
 };
 
@@ -27,11 +32,15 @@ class H5App extends Base {
   }
 
   getTemplate(page) {
-    return classMap[page];
+    return templates[page];
   }
 
   getPageOptions(name) {
     return pages[name];
+  }
+
+  getKlass(name) {
+    return classMap[name];
   }
 }
 

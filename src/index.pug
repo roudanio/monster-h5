@@ -42,5 +42,7 @@ html(lang="zh-cmn-Hans")
       a(href="https://roudan.io/", target="_blank") 肉蛋工作室
       | 设计开发。
 
-    if mode === 'production'
-      audio#music.hide(src="./audio/frog.mp3", preload="auto" loop)
+    audio#music.hide(src="./audio/bg.mp3", preload="auto" loop)
+
+    script
+      include ./mta.js

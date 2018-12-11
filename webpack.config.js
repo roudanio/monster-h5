@@ -21,7 +21,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.pug$/,
+        test: /views\/.*\.pug$/,
+        use: [
+          'raw-loader',
+          'pug-plain-loader',
+        ],
+      },
+      {
+        test: /index\.pug$/,
         use: 'pug-loader',
       },
       {

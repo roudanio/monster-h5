@@ -1,6 +1,8 @@
 import './styl/preloader.styl';
 import './styl/main.styl';
 import Wukong from 'wukong/wukong';
+import Player from 'wukong/player';
+import {loadCSS} from 'wukong/helper/loader';
 
 /* global BASE_PATH */
 
@@ -72,8 +74,17 @@ const assets = [
       id: 'btn3',
       src: './img/btn3.png',
     },
+    {
+      id: 'share',
+      src: './img/share.png',
+    },
     `./main.${hash}.js`,
   ],
 ];
 
+// 未防止阻塞渲染
+loadCSS('https://use.fontawesome.com/releases/v5.5.0/css/solid.css');
+loadCSS('https://use.fontawesome.com/releases/v5.5.0/css/fontawesome.css');
+
 wukong.load(assets);
+new Player();
