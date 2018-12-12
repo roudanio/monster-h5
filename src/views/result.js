@@ -53,7 +53,7 @@ export default class Result extends Base {
 
   enter() {
     super.enter();
-    this.el.classList.remove('fadeOut');
+    this.el.classList.remove('hide');
     this.scores = [];
 
     const result = Object.assign({}, DataBus.result);

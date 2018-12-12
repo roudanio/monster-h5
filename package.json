@@ -24,7 +24,7 @@
     "eventemitter3": "^3.1.0",
     "normalize.css": "^8.0.1",
     "spinkit": "^1.2.5",
-    "wukong": "meathill-freelance/wukong"
+    "wukong": "github:meathill-freelance/wukong#1d6a480146d7567d372139a53126811bcb43681f"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",

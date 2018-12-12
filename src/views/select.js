@@ -168,10 +168,13 @@ export default class Select extends Base {
   }
 
   enter() {
-    this.page = 0;
+    super.enter();
     this.result = {};
+    if (this.current) {
+      this.current.remove();
+    }
     this.current = null;
-    this.showPage(this.page);
+    this.showPage(0);
   }
 
   createSelect(question) {
@@ -215,7 +218,8 @@ export default class Select extends Base {
       ? play(this.current, 'animated fadeOut faster')
           .then(() => {
             this.el.removeChild(this.current);
-          }) : Promise.resolve();
+          })
+      : Promise.resolve();
     p.then(() => {
       const select = question[page];
       page = this.createSelect(select);
