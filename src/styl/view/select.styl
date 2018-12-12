@@ -84,3 +84,14 @@
       &:nth-of-type({n})
         animation-delay .33s * n + .8s
 
+@media (max-height: 575px)
+  #select
+    .form-option-item
+      img
+        position relative
+        z-index 1
+
+      .form-option
+        margin-top -20px
+        position relative
+        z-index 2
