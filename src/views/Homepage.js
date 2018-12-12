@@ -20,7 +20,7 @@ export default class Homepage extends Base {
     el.appendChild(monster);
 
     const p = document.createElement('p');
-    p.innerHTML = '每个人身体里都住着一只小怪兽，<br>你的怪兽DNA由什么组成？<br>躁暴、粘人、天真、好奇…';
+    p.innerHTML = '每个人身体里都住着一只小怪兽，<br>你的怪兽DNA由什么组成？<br>暴躁、粘人、天真、好奇…';
     p.className = 'info animated fadeInUp';
     el.appendChild(p);
 
