@@ -179,7 +179,7 @@ export default class Select extends Base {
 
   createSelect(question) {
     const container = document.createElement('div');
-    container.className = 'select-container';
+    container.className = 'select-container page-' + this.page;
     if (this.page === 2) {
       container.classList.add('grid');
     }
