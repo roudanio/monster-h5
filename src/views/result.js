@@ -59,6 +59,7 @@ export default class Result extends Base {
     const result = Object.assign({}, DataBus.result);
     let total = 0;
     let max = 0;
+    let maxIndex = -1;
     let maxKey = 'cute';
     for (let prop in result) {
       const item = result[prop];
@@ -68,6 +69,7 @@ export default class Result extends Base {
         maxKey = prop;
       }
     }
+    let count = 0;
     for (let prop in result) {
       const percent = Math.round(result[prop] / total * 100);
       const div = document.createElement('div');
@@ -75,7 +77,13 @@ export default class Result extends Base {
       div.innerText = percent + '%';
       this.scores.push(div);
       this.container.appendChild(div);
+      maxIndex = maxKey === prop ? count : maxIndex;
+      count++;
     }
+    // 把最大的放最后
+    const item = this.scores[maxIndex];
+    this.scores.splice(maxIndex, 1);
+    this.scores.push(item);
 
     const key = this.key = `result-${maxKey}`;
     const image = this.queue.getResult(key);
