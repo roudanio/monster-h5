@@ -5,13 +5,11 @@
     position absolute
 
   .slogan
-    width 82.87037037vw
     height 29.814814815vw
     top 5.555555556vw
     left 8.796296296vw
 
   .monster
-    width 67.037037037vw
     height 81.574074074vw
     top 34.444444444vw
     left 16.481481481vw
@@ -23,6 +21,7 @@
   width 100%
   line-height  1.5
   margin 0
+  padding-left 1em
 
 .start-link
   width 27.222222222vw
@@ -63,3 +62,21 @@
 
   50%
     transform translateY(27.5vw)
+
+@media (min-width: 414px) and (max-height: 640px)
+  #homepage
+    .slogan
+      top 4vw
+      left 16vw
+      height 24vw
+
+    .monster
+      top 29vw
+      height 78vw
+      left 18vw
+
+    .info
+      top 110vw
+
+    .start-link
+      top 125vw
