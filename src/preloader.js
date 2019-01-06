@@ -87,14 +87,14 @@ loadCSS('https://use.fontawesome.com/releases/v5.5.0/css/solid.css');
 loadCSS('https://use.fontawesome.com/releases/v5.5.0/css/fontawesome.css');
 load('https://res2.wx.qq.com/open/js/jweixin-1.4.0.js')
   .then(() => {
-    return load('http://weixin.meathill.com/?url=http://kongfumonster.meathill.com')
+    return load('http://weixin.meathill.com/?url=http://kungfumonster.meathill.com/')
   })
   .then(() => {
     wx.ready(function () {
       wx.updateTimelineShareData({
         title: '武林怪兽-快测测你体内的怪兽DNA！', // 分享标题
-        link: 'http://kongfumonster.meathill.com', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-        imgUrl: 'http://kongfumonster.meathill.com/img/logo.png', // 分享图标
+        link: 'http://kungfumonster.meathill.com', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        imgUrl: 'http://kungfumonster.meathill.com/img/logo.png', // 分享图标
         success: function () {
           // 设置成功
           console.log('set share link ok');
@@ -103,8 +103,8 @@ load('https://res2.wx.qq.com/open/js/jweixin-1.4.0.js')
       wx.updateAppMessageShareData({
         title: '武林怪兽', // 分享标题
         desc: '快测测你体内的怪兽DNA！', // 分享描述
-        link: 'http://kongfumonster.meathill.com', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-        imgUrl: 'http://kongfumonster.meathill.com/img/logo.jpg', // 分享图标
+        link: 'http://kungfumonster.meathill.com', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        imgUrl: 'http://kungfumonster.meathill.com/img/logo.jpg', // 分享图标
         success: function () {
           // 设置成功
           console.log('set share link ok');
