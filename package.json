@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/meathill-freelance/monster-h5#readme",
   "dependencies": {
-    "animate.css": "^3.7.0",
+    "animate.css": "^3.7.2",
     "director": "^1.2.8",
     "eventemitter3": "^3.1.0",
     "normalize.css": "^8.0.1",
