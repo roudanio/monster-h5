@@ -21,15 +21,15 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "director": "^1.2.8",
-    "eventemitter3": "^3.1.0",
+    "eventemitter3": "^3.1.2",
     "normalize.css": "^8.0.1",
     "spinkit": "^1.2.5",
     "wukong": "github:meathill-freelance/wukong#1d6a480146d7567d372139a53126811bcb43681f"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
-    "babel-loader": "^8.0.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^1.0.1",
     "html-webpack-plugin": "^3.2.0",
@@ -38,13 +38,13 @@
     "pug-loader": "^2.4.0",
     "pug-plain-loader": "^1.0.0",
     "raw-loader": "^1.0.0",
-    "rimraf": "^2.6.2",
+    "rimraf": "^2.6.3",
     "style-loader": "^0.23.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
-    "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": ">=3.1.14",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.3",
+    "webpack-dev-server": "^3.7.1",
     "write-file-webpack-plugin": "^4.5.0"
   }
 }
