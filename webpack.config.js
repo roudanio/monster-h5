@@ -61,18 +61,20 @@ module.exports = {
       test: /\.css$/,
       useHashIndex: true,
     }),
-    new CopyWebapckPlugin([
-      {
-        from: 'img',
-        to: 'img',
-        toType: 'dir',
-      },
-      {
-        from: 'audio',
-        to: 'audio',
-        toType: 'dir',
-      },
-    ]),
+    new CopyWebapckPlugin({
+      patterns: [
+        {
+          from: 'img',
+          to: 'img',
+          toType: 'dir',
+        },
+        {
+          from: 'audio',
+          to: 'audio',
+          toType: 'dir',
+        },
+      ],
+    }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
