@@ -27,11 +27,11 @@
     "wukong": "github:meathill-freelance/wukong#1d6a480146d7567d372139a53126811bcb43681f"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
     "babel-loader": "^8.0.6",
-    "copy-webpack-plugin": "^6.0.1",
-    "css-loader": "^3.5.3",
+    "copy-webpack-plugin": "^6.0.3",
+    "css-loader": "^4.2.0",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
     "pug": "^3.0.0",
@@ -39,10 +39,10 @@
     "pug-plain-loader": "^1.0.0",
     "raw-loader": "^4.0.1",
     "style-loader": "^1.2.1",
-    "stylus": "^0.54.7",
+    "stylus": "^0.54.8",
     "stylus-loader": "^3.0.2",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.10",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "write-file-webpack-plugin": "^4.5.1"
   }
